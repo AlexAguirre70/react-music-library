@@ -7,7 +7,8 @@ function GalleryItem(props) {
         'width': '25vw',
         'height': '20vh',
         'border': '1px solid black',
-        'margin': '2px'
+        'margin': '2px',
+        
     }
     
     const detailStyle = {
@@ -15,10 +16,8 @@ function GalleryItem(props) {
         'height': '20vh',
         'border': '1px solid black',
         'margin': '2px',
-        'backgroundImage': `url(${props.item.artworkUrl100})`,
         'backgroundRepeat': 'no-repeat',
-        'backgroundSize': 'cover',
-        'color': 'yellow'
+        'backgroundSize': 'cover'
     }
 
     const simpleView = () => {
@@ -26,6 +25,8 @@ function GalleryItem(props) {
             <div style={simpleStyle}>
                 <h3>{props.item.trackName}</h3>
                 <h4>{props.item.collectionName}</h4>
+                <img src={props.item.artworkUrl60}/>
+
             </div>
         )
     }
@@ -33,6 +34,7 @@ function GalleryItem(props) {
     const detailView = () => {
         return (
             <div style={detailStyle}>
+                <img src={props.item.artworkUrl100}/>
                 <h2>{props.item.trackName}</h2>
                 <h3>{props.item.collectionName}</h3>
                 <h4>{props.item.primaryGenreName}</h4>
