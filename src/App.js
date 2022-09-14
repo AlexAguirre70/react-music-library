@@ -1,6 +1,9 @@
 import { useEffect, useState,useRef} from 'react'
+import{BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Gallery from './components/Gallery'
 import SearchBar from './components/SearchBar'
+import AlbumView from './components/AlbumView'
+import ArtistView from './components/ArtistView'
 import { DataContext } from './context/DataContext'
 import { SearchContext } from './context/SearchContext'
 
@@ -45,6 +48,8 @@ const App = () => {
           <DataContext.Provider value={data}>
           <Gallery />
           </DataContext.Provider>
+          <AlbumView />
+          <ArtistView />
       </div>
   )
 }
